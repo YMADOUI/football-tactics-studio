@@ -1,0 +1,19 @@
+{
+  "name": "football-tactics-studio",
+  "version": "1.0.0",
+  "description": "Application de gestion d'entraînements de football",
+  "scripts": {
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:backend": "cd backend && node index.js",
+    "dev:frontend": "cd frontend && npm run dev",
+    "build": "cd frontend && npm install && npm run build",
+    "start": "node backend/index.js",
+    "postinstall": "cd backend && npm install && npx prisma generate && cd ../frontend && npm install && npm run build"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": ["football", "tactics", "training"],
+  "author": "YMADOUI",
+  "license": "MIT"
+}

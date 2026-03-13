@@ -1,0 +1,12 @@
+[build]
+builder = "nixpacks"
+
+[build.env]
+NPM_CONFIG_PRODUCTION = "false"
+
+[deploy]
+startCommand = "cd backend && npx prisma migrate deploy && node index.js"
+healthcheckPath = "/api/ping"
+healthcheckTimeout = 100
+restartPolicyType = "on_failure"
+restartPolicyMaxRetries = 3
